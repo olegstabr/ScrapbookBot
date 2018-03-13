@@ -1,12 +1,17 @@
 ﻿using System;
+using System.Threading.Tasks;
 
 namespace ScrapbookBot
 {
-    class Program
+    internal static class Program
     {
-        static void Main(string[] args)
+        private static async Task Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            var bot = new Bot();
+            await bot.GetTokenFromFileAsync("/home/linuxoid/Desktop/token");
+            await bot.Start();
+            Console.ReadLine();
+            bot.Stop();
         }
     }
 }
