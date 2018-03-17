@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Text;
 
 namespace ScrapbookBot.Order
 {
@@ -15,6 +16,15 @@ namespace ScrapbookBot.Order
             Name = name;
             Description = description;
             Fields = fields;
+        }
+        
+        public override string ToString()
+        {
+            StringBuilder builder = new StringBuilder();
+            builder.AppendLine($"\tID: \t \t{Id}");
+            builder.AppendLine($"\tName: \t \t{Name}");
+            builder.AppendLine($"\tDescription: \t{Description}");
+            return builder.ToString();
         }
     }
 }
