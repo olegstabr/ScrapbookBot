@@ -7,22 +7,18 @@ namespace ScrapbookBot.Order
 {
     public class Order
     {
-        public bool IsFullInfo => CustomerName != default && CustomerPhone != default && CreatedDate != default &&
-                              DeadlineDate != default && Status != default;
+        public bool IsFullInfo => CustomerName != default && CustomerName != string.Empty && CustomerPhone != default &&
+                                  CustomerPhone != string.Empty && CreatedDate != default &&
+                                  CreatedDate != string.Empty && DeadlineDate != default &&
+                                  DeadlineDate != string.Empty && Status != default && Status != string.Empty &&
+                                  OrderForms != null;
 
-        [JsonProperty(PropertyName = "id")]
         public long Id { get; set; }
-        [JsonProperty(PropertyName = "customerName")]
         public string CustomerName { get; set; }
-        [JsonProperty(PropertyName = "customerPhone")]
         public string CustomerPhone { get; set; }
-        [JsonProperty(PropertyName = "createdDate")]
         public string CreatedDate { get; set; }
-        [JsonProperty(PropertyName = "deadlineDate")]
         public string DeadlineDate { get; set; }
-        [JsonProperty(PropertyName = "status")]
         public string Status { get; set; }
-        [JsonProperty(PropertyName = "orderForms")]
         public List<OrderForm> OrderForms { get; set; }
 
         public Order() { }

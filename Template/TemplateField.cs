@@ -1,4 +1,5 @@
-﻿namespace ScrapbookBot.Template
+﻿
+namespace ScrapbookBot.Template
 {
     public class TemplateField
     {

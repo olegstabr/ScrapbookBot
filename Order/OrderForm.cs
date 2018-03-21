@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Text;
+using Newtonsoft.Json;
 
 namespace ScrapbookBot.Order
 {
@@ -9,6 +10,8 @@ namespace ScrapbookBot.Order
         public string Name { get; }
         public string Description { get; }
         public List<FieldValue> Fields { get; }
+        
+        public OrderForm() { }
 
         public OrderForm(long id, string name, string description, List<FieldValue> fields)
         {
