@@ -1,24 +1,24 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Text;
 using Newtonsoft.Json;
 
-namespace ScrapbookBot.Order
+namespace ScrapbookBot.Models.Order
 {
     public class Order
     {
-        public bool IsFullInfo => CustomerName != default && CustomerName != string.Empty && CustomerPhone != default &&
-                                  CustomerPhone != string.Empty && CreatedDate != default &&
-                                  CreatedDate != string.Empty && DeadlineDate != default &&
-                                  DeadlineDate != string.Empty && Status != default && Status != string.Empty &&
-                                  OrderForms != null;
-
+        [JsonProperty("id")]
         public long Id { get; set; }
+        [JsonProperty("customerName")]
         public string CustomerName { get; set; }
+        [JsonProperty("customerPhone")]
         public string CustomerPhone { get; set; }
+        [JsonProperty("createdDate")]
         public string CreatedDate { get; set; }
+        [JsonProperty("deadlineDate")]
         public string DeadlineDate { get; set; }
+        [JsonProperty("status")]
         public string Status { get; set; }
+        [JsonProperty("orderForms")]
         public List<OrderForm> OrderForms { get; set; }
 
         public Order() { }
