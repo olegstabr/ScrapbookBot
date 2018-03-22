@@ -8,6 +8,7 @@
         OrderCreatedDate,
         OrderDeadlineDate,
         OrderStatus,
-        OrderOrderForms
+        OrderOrderForms,
+        TemplateField
     }
 }
