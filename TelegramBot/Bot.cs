@@ -157,7 +157,7 @@ namespace ScrapbookBot.TelegramBot
         {
             var builder = new StringBuilder();
 
-            if (orders == null)
+            if (orders == null || orders.Count == 0)
             {
                 return "На данный момент нет активных заказов";
             }
@@ -224,7 +224,7 @@ namespace ScrapbookBot.TelegramBot
                 case "GetOrdersCallback":
                     var orders = await _httpClient.GetOrderAsync();
                     var ordersMessage = MakeOrdersMessage(orders);
-                    await _bot.SendTextMessageAsync(message.Chat.Id, ordersMessage);
+                    await _bot.SendTextMessageAsync(message.Chat.Id, ordersMessage, ParseMode.Html);
                     break;
             }
 

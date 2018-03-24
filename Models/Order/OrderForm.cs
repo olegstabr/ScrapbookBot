@@ -36,9 +36,10 @@ namespace ScrapbookBot.Models.Order
         public override string ToString()
         {
             StringBuilder builder = new StringBuilder();
-            builder.AppendLine($"\tID: \t \t{Id}");
-            builder.AppendLine($"\tName: \t \t{Name}");
-            builder.AppendLine($"\tDescription: \t{Description}");
+            foreach (var field in Fields)
+            {
+                builder.AppendLine($"\t \t{field}");
+            }
             return builder.ToString();
         }
     }

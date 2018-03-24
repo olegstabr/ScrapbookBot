@@ -37,13 +37,13 @@ namespace ScrapbookBot.Models.Order
         public override string ToString()
         {
             StringBuilder builder = new StringBuilder();
-            builder.AppendLine($"ID: \t \t{Id}");
-            builder.AppendLine($"Customer Name: \t{CustomerName}");
-            builder.AppendLine($"Customer Phone: {CustomerPhone}");
-            builder.AppendLine($"Created Date: \t{CreatedDate}");
-            builder.AppendLine($"Deadline Date: \t{DeadlineDate}");
-            builder.AppendLine($"Status: \t{Status}");
-            builder.AppendLine("OrderForms: ");
+            builder.AppendLine($"Имя заказчика: \t <b>{CustomerName}</b>");
+            builder.AppendLine($"Телефон заказчика: <b>{CustomerPhone}</b>");
+            builder.AppendLine($"Дата создания: \t <b>{CreatedDate}</b>");
+            builder.AppendLine($"Дата окончания: \t <b>{DeadlineDate}</b>");
+            builder.AppendLine($"Статусы: \t <b>{Status}</b>");
+            builder.AppendLine($"Тип изделия: \t <b>{OrderForms[0].Name}</b>");
+            builder.AppendLine("Параметры заказа: ");
             foreach (var form in OrderForms)
             {
                 builder.AppendLine($"{form}");

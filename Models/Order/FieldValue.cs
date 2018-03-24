@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using System.Text;
+using Newtonsoft.Json;
 using ScrapbookBot.Models.Template;
 
 namespace ScrapbookBot.Models.Order
@@ -22,6 +23,13 @@ namespace ScrapbookBot.Models.Order
             Value = value;
             OrderForm = orderForm;
             TemplateFieldTemplate = templateFieldTemplate;
+        }
+
+        public override string ToString()
+        {
+            var builder = new StringBuilder();
+            builder.Append($"\t \t{TemplateFieldTemplate}: <b>{Value}</b>");
+            return builder.ToString();
         }
     }
 }
